@@ -6,7 +6,6 @@ import FaqEditModal from '@/components/Modals/Faq/FaqEditModal'
 import React,{useState} from 'react'
 
 
-
 const Faq = [
     {
         question:"met, consectetur adipisicing elit. Adipisci minus vel fugit natus, dolore aut nulla impedit hic cum enim vo ",
@@ -31,6 +30,7 @@ const Faq = [
 ]
 
 const page = () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [editModalOpen, setEditModalOpen] = useState<boolean>(false);
      const [deleteModalOpen, setDeleteModalOpen] = useState<boolean>(false);
 
@@ -65,7 +65,7 @@ const page = () => {
     </thead>
     <tbody className=" divide-y divide-green-200">
     {Faq.map((Faq, index) => (
-        <tr>
+        <tr key={index}>
             <td className="px-6 py-4">{Faq.question}</td>
             <td className="px-6 py-4 ">{Faq.answer}</td>
            
